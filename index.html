@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC H.265 and PCMA</title>
+    <style>
+        /* Toast container */
+        #toast-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        /* Toast notification */
+        .toast {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        /* Toast appears */
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <h1>WebRTC H.265 and PCMA</h1>
+    <div id="toast-container"></div>
+    <video id="video" autoplay playsinline controls></video>
+    <audio id="audio" autoplay controls></audio>
+    <button id="startButton">Start</button>
+    <button id="videoButton">Test Video Frame</button>
+    <button id="wsButton">Test Websocket</button>
+    <script type="module" src="client.js"></script>
+</body>
+</html>
